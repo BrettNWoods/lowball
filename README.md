@@ -19,3 +19,50 @@ Lowball is here to solve the distinct problems that buyers and sellers have when
 * Flakes. People saying that they are going to come and have a look at the thing you are selling but never come to look at it.
 * Scammers. Some people try to scam you into holding an item for them or by showing a doctored invoce where they pay you too much and 'insist' you pay them back.
 * Scammers. Some people try and scam you by insisting on using non-refundable internet transfers that get withdrawn after the sale
+
+---
+
+## 📦 Skills
+
+Lowball ships with a skill for AI coding agents that do marketplace deal research.
+
+### OpenCode skill
+
+Location: `.opencode/skills/lowball-research/SKILL.md`
+
+**Install:** Copy the entire `lowball-research/` directory into your OpenCode project's `.opencode/skills/` folder, or symlink it:
+
+```bash
+# In your project root
+mkdir -p .opencode/skills
+cp -r .opencode/skills/lowball-research .opencode/skills/lowball-research
+```
+
+### Hermes Agent skill
+
+Location: `.hermes/skills/research/lowball/SKILL.md`
+
+**Install:**
+
+```bash
+# One-time setup — copy the skill into Hermes' global skills directory
+cp -r .hermes/skills/research/lowball ~/.hermes/skills/research/lowball
+```
+
+Or symlink to keep it in sync with the repo:
+
+```bash
+ln -sf "$(pwd)/.hermes/skills/research/lowball" ~/.hermes/skills/research/lowball
+```
+
+After installing, verify Hermes can see it:
+
+```bash
+hermes skills list | grep lowball
+```
+
+Expected output: `lowball — Marketplace deal-check and recommendation...`
+
+### Using the skill
+
+Once installed, any agent can load it by name. For example, to deal-check a Gumtree listing, the agent will automatically pick up the skill when the user asks "is this a good deal?" or mentions a marketplace listing.
