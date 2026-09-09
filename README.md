@@ -1,3 +1,7 @@
+# Lowball
+
+`NO TIME WASTERS, I KNOW WHAT I HAVE`
+
 Lowball is here to solve the distinct problems that buyers and sellers have when exchanging physical goods to people they met on the internet.
 
 --- Buyers problems
